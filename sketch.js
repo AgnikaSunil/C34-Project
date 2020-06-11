@@ -2,7 +2,7 @@ let scribble=[];
 let pen=[];
 var r,g,b;
 var canvas;
-var whiteCover,colorPicker1;
+var colorPicker1;
 
 	function setup() {
     r = random(255);
@@ -12,11 +12,8 @@ var whiteCover,colorPicker1;
     canvas = createCanvas(1422, 690);
     canvas.mousePressed(startScribbling);
 
-    whiteCover = createSprite(190,667,70,34);
-    whiteCover.shapeColor = "white";
-
     colorPicker1 = createColorPicker('#FF0000');
-    colorPicker1.position(230,650);
+    colorPicker1.position(5,590);
     colorPicker1.size(100,36);
 	}
 	
@@ -26,20 +23,27 @@ var whiteCover,colorPicker1;
     bgChange(); 
     background(r,g,b);
 
-    drawSprites();
-    
-    textSize(22);
+    textSize(26);
     fill("black");
+    stroke("white");
+    strokeWeight(3);
     textSize(16);
-    text("Choose",155,663);
-    text("Ink Color:",155,683);
+    text("Choose",5,560);
+    text("Ink Color:",5,580);
 
     stroke("white");
     strokeWeight(3);
     textSize(40);
     textFont("Georgia");
     text("AGNIKA'S CANVAS",532,45);
-   
+
+    stroke("white");
+    strokeWeight(3);
+    textSize(23);
+    textFont("Georgia");
+    text("You could also choose a",1150,570);
+    text("Plain background:",1180,600);
+    
     noFill();
     strokeWeight(4);
     stroke(colorPicker1.color());
@@ -99,6 +103,7 @@ var whiteCover,colorPicker1;
       b = 0;
     })
     blackBgBtn.position(1280,610);
-    blackBgBtn.size(140,79);
+    blackBgBtn.size(140,80);
     blackBgBtn.style('background-color', color(0));
   }
+  
